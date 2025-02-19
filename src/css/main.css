@@ -1,0 +1,143 @@
+body {
+    margin: 0px;
+}
+
+nav {
+    z-index: 10;
+    width: 100%;
+    left: 0;
+    top:0;
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    background-color: aqua;
+}
+
+nav #nav-buttons {
+    margin-right: 10px;
+}
+
+nav a {
+    padding-inline: 20px;
+    padding-block: 5px;
+    border-radius: 1px;
+    
+}
+
+nav a:hover {
+    transition: 0.5s;
+    background-color: red;
+}
+
+nav img {
+    margin: 10px;
+    height: 50px;
+}
+
+.box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-block: 50px;
+}
+
+#welcome {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 50px;
+    background-color: #161616;
+    left: 0;
+    top: 0;
+    height: 40rem;
+    width: 100%;
+    z-index: 1;
+    transition: 1s;
+}
+
+#welcome > h1 {
+    color: white;
+}
+
+#welcome > section {
+    width: 90%;
+    padding-right: 5rem;
+}
+
+#welcome > img {
+    border-radius: 100%;
+    padding-left: 5rem;
+    height: 400px;
+}
+
+#welcome span {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 5rem;
+    color: rgb(212, 43, 1);
+}
+
+.text-container {
+    display: inline-block;
+}
+
+.cursor {
+    display: inline-block;
+    margin-left: 2px;
+    animation: blink 0.7s infinite;
+}
+
+#welcome #static-text {
+    color: rgb(59, 59, 59);
+}
+
+#welcome p {
+    color: rgb(59, 59, 59);
+    font-size: 2rem;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+#catfact {
+    background-color: #161616;
+}
+
+#catfact p {
+    margin-block: 10rem;
+    color: wheat;
+    font-size: 2rem;
+}
+
+#catfact img {
+    height: 8rem;
+}
+
+#cat3 {
+    position: relative;
+    display: flex;
+    animation: move1 5s infinite;
+}
+
+#cat2 {
+    position: relative;
+    animation: move2 5s infinite;
+}
+
+@keyframes move1 {
+    0% {left: 0; bottom: -35%}
+    50% {left: 300px; bottom: -35%}
+    100% {left: 0; bottom: -35%}
+}
+
+@keyframes move2 {
+    0% {right: 0; bottom: 35%}
+    50% {right: 300px; bottom: 35%}
+    100% {right: 0%; bottom: 35%}
+}
