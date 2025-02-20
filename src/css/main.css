@@ -1,3 +1,13 @@
+html {
+    scroll-behavior:smooth;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     margin: 0px;
 }
@@ -74,7 +84,7 @@ nav img {
 #welcome span {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 5rem;
-    color: rgb(212, 43, 1);
+    color: rgb(85, 212, 1);
 }
 
 .text-container {
@@ -87,7 +97,7 @@ nav img {
     animation: blink 0.7s infinite;
 }
 
-#welcome #static-text {
+#welcome .static-text {
     color: rgb(59, 59, 59);
 }
 

@@ -1,6 +1,6 @@
 const textElement = document.getElementById('typed-text');
-const text = "test123123123";
-const catUrl = 'https://catfact.ninja/fact'
+const text = "Hello world!";
+const catUrl = ' https://catfact.ninja/fact'
 const CATFACT = document.getElementById('catFacts')
 
 let index = 0;
