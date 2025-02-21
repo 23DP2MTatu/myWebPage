@@ -130,6 +130,7 @@ nav img {
 }
 
 #catfact p {
+    width: 50vw;
     margin-block: 10rem;
     color: wheat;
     font-size: 2rem;
@@ -141,7 +142,6 @@ nav img {
 
 #cat3 {
     position: relative;
-    display: flex;
     animation: move1 10s infinite;
 }
 
@@ -152,16 +152,16 @@ nav img {
 
 @keyframes move1 {
     0% {left: 0%; bottom: 35%}
-    25% {left: 80%; bottom: 35%}
-    50% {left: 80%; bottom: -35%}
+    25% {left: 60%; bottom: 35%}
+    50% {left: 60%; bottom: -35%}
     75% {left: 0%; bottom: -35%;}
     100% {left: 0%; bottom: 35%}
 }
 
 @keyframes move2{
     0% {right:0%; bottom: -35%}
-    50% {right: 80%; bottom: 35%}
-    25% {right: 80%; bottom: -35%}
+    50% {right: 60%; bottom: 35%}
+    25% {right: 60%; bottom: -35%}
     75% {right: 0%; bottom: 35%}
     100% {right: 0%; bottom: -35%}
 }
