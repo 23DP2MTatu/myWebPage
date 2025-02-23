@@ -37,9 +37,9 @@ nav {
     background-color: #1A1A1A ;
     height: 100vh;
     width: 100vw;
-    animation-delay: 10s;
-    animation: hide 3.1s forwards;
-    display: none;
+    animation-delay: 1.5s;
+    animation: hide 1s forwards;
+    /* display: none; */
 }
 
 #load-text {
@@ -51,7 +51,6 @@ nav {
     align-items: center;
     margin-top: 15%;
     color: #a45b2f;
-    transition: 5s;
 }
 
 .loader  > .w-line {
@@ -65,13 +64,12 @@ nav {
     width: 40%;
     transform-origin: left;
     animation: loadingAnim linear;
-    animation-delay: 1s;
-    animation-duration: 2s;
+    animation-duration: 1s;
 }
 
 @keyframes hide {
-    100% {
-        display: none;
+    to {
+        visibility: hidden;
     }
 }
 

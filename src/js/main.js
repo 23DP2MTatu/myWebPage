@@ -8,17 +8,17 @@ const gameContainer = document.querySelector('.game')
 function typeText(text, textElement, index = 0) {
     if (index < text.length) {
         textElement.innerHTML += text.charAt(index)
-        setTimeout(() => typeText(text, textElement, index + 1), 200)
+        setTimeout(() => typeText(text, textElement, index + 1), 100)
     }
 }
 
 setTimeout(() => {
-    typeText("Loading...", loadTextElement);
-}, 500);
+    typeText("Loading", loadTextElement);
+}, 100);
 
 setTimeout(() => {
     typeText("Hello World!", welcomeTextElement);
-}, 3500);
+}, 1500);
 
 fetch(catUrl)
     .then(response => {
