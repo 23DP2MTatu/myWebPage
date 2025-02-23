@@ -1,6 +1,6 @@
 @font-face {
     font-family: console;
-    src: url(../font/Inconsolata-VariableFont_wdth\,wght.ttf);
+    src: url(../font/consoleFont.ttf) format('truetype');
 }
 
 html {
