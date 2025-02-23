@@ -1,3 +1,8 @@
+@font-face {
+    font-family: console;
+    src: url(/src/font/Inconsolata-VariableFont_wdth\,wght.ttf);
+}
+
 html {
     scroll-behavior:smooth;
 }
@@ -21,16 +26,66 @@ nav {
     position: fixed;
     justify-content: space-between;
     align-items: center;
-    background-color: wheat;
+    background-color: #121212  ;
     animation: scroll-nav linear;
-    -webkit-animation: scroll-nav linear;
-    -moz-animation: scroll-nav linear;
     animation-timeline: scroll();
 }
 
+.loader {
+    z-index: 10;
+    position: fixed;
+    background-color: #1A1A1A ;
+    height: 100vh;
+    width: 100vw;
+    animation-delay: 10s;
+    animation: hide 3.1s forwards;
+    display: none;
+}
+
+#load-text {
+    font-family: console;
+    font-size: 10rem;
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15%;
+    color: #a45b2f;
+    transition: 5s;
+}
+
+.loader  > .w-line {
+    height: 20px;
+    position: fixed;
+    left: 30%;
+    top: 55vh;
+    z-index: 20;
+    background-color: #a45b2f;
+    scale: 0 1;
+    width: 40%;
+    transform-origin: left;
+    animation: loadingAnim linear;
+    animation-delay: 1s;
+    animation-duration: 2s;
+}
+
+@keyframes hide {
+    100% {
+        display: none;
+    }
+}
+
+@keyframes loadingAnim {
+    to { scale: 1 1;}
+}
+
 @keyframes scroll-nav {
-    50% {
-        background-color: black;
+    from {
+        transition: 2s ease;
+    }
+    
+    to {
+        transition: 2s top 10rem;
     }
 }
 
@@ -39,15 +94,19 @@ nav #nav-buttons {
 }
 
 nav a {
-    padding-inline: 20px;
+    text-decoration: none;
+    color: wheat;
+    font-family: console;
+    font-size: 1.5rem;
+    margin-right: 1.6rem;
+    padding-inline: 1.6rem;
     padding-block: 5px;
-    border-radius: 1px;
-    
+    border-bottom: 3px solid wheat;
 }
 
 nav a:hover {
     transition: 0.5s;
-    background-color: red;
+    border-bottom: 3px solid #fd7114a2;
 }
 
 nav img {
@@ -67,7 +126,7 @@ nav img {
     display: grid;
     grid-template-columns: auto auto;
     gap: 50px;
-    background-color: #161616;
+    background-color: #161616  ;
     left: 0;
     top: 0;
     height: 40rem;
@@ -76,25 +135,19 @@ nav img {
     transition: 1s;
 }
 
-#welcome > h1 {
-    color: white;
-}
-
 #welcome > section {
-    width: 90%;
-    padding-right: 5rem;
+    width: 60vw;
+    padding-right: 3rem;
 }
 
-#welcome > img {
-    border-radius: 100%;
-    padding-left: 5rem;
-    height: 400px;
+#welcome img {
+    height: 350px;
 }
 
 #welcome span {
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 5rem;
-    color: rgb(85, 212, 1);
+    font-family: console;
+    font-size: 4.5rem;
+    color: #eb6f22;
 }
 
 .text-container {
@@ -112,8 +165,10 @@ nav img {
 }
 
 #welcome p {
-    color: rgb(59, 59, 59);
-    font-size: 2rem;
+    font-family: console;
+    margin-top: 2rem;
+    color: #ca9d82;
+    font-size: 1.5rem;
 }
 
 @keyframes blink {
@@ -127,13 +182,18 @@ nav img {
 
 #catfact {
     background-color: #161616;
+    display: flex;
+    align-items: center;
+    padding-block: 7rem;
 }
 
 #catfact p {
+    text-align: center;
     width: 50vw;
-    margin-block: 10rem;
+    height: 20vh;
     color: wheat;
     font-size: 2rem;
+    margin-block: 2rem;
 }
 
 #catfact img {
@@ -142,39 +202,217 @@ nav img {
 
 #cat3 {
     position: relative;
-    animation: move1 10s infinite;
+    animation: move1 5s infinite;
 }
 
 #cat2 {
     position: relative;
-    animation: move2 10s infinite;
+    animation: move2 5s infinite;
 }
 
 @keyframes move1 {
-    0% {left: 0%; bottom: 35%}
-    25% {left: 60%; bottom: 35%}
-    50% {left: 60%; bottom: -35%}
-    75% {left: 0%; bottom: -35%;}
-    100% {left: 0%; bottom: 35%}
+    0% {left:0%; bottom: 130px}
+    50% {left: 60%; bottom: -130px}
+    25% {left: 60%; bottom: 130px}
+    75% {left: 0%; bottom: -130px}
+    100% {left: 0%; bottom: 130px}
 }
 
 @keyframes move2{
-    0% {right:0%; bottom: -35%}
-    50% {right: 60%; bottom: 35%}
-    25% {right: 60%; bottom: -35%}
-    75% {right: 0%; bottom: 35%}
-    100% {right: 0%; bottom: -35%}
-}
-
-#localTimeDate {
-    background-color:brown;
+    0% {right:0%; bottom: -130px}
+    50% {right: 60%; bottom: 130px}
+    25% {right: 60%; bottom: -130px}
+    75% {right: 0%; bottom: 130px}
+    100% {right: 0%; bottom: -130px}
 }
 
 #stack {
+    background-color: #252525;
+    display: flex;
+    flex-direction: column;
+}
+
+.stack {
+    display: flex;
+    width: 90vw;
+    animation: show linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+    margin-bottom: 2rem;
 
 }
 
-.avatarGH {
-    height: 40px;
-    border-radius: 50%;
+@keyframes show {
+    from {
+        opacity: 0;
+        scale: 0.5;
+    }
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+@keyframes showScroll {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.stack1 {
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+.stack2 {
+    display: flex;
+    width: 95vw;
+}
+
+.stack3 {
+    justify-content: right;
+}
+
+.stack3 img{
+    position: absolute;
+    left: 20vw;
+    height: 350px;
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        left: -30vw;
+    }
+
+    to {
+        opacity: 1;
+        left: 20vw;
+    }
+}
+
+.stack4 {
+    justify-content: right;
+}
+
+.stack5 {
+    justify-content: left;
+}
+
+.stack p {
+    border-radius: 20px;
+    width: 40%;
+    font-size: 28px;
+    color: gray;
+    background-color: #1A1A1A;
+    padding: 2rem;
+    height: auto;
+    text-align: center;
+}
+
+.stack2 ul li{
+    list-style: none;
+    width: 230px;
+    height: 100px;
+    background-color: #1A1A1A;
+    border-radius: 6px;
+    position: absolute;
+    left: max(calc(200px * 7), 100%);
+    animation-name: scrollLeft;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+
+.stack2 ul {
+    width: 80%;
+    max-width: 1536px;
+    margin-inline: auto;
+    position: relative;
+    height: 100px;
+    margin-block: 5rem;
+    overflow: hidden;
+    mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0)
+    );
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    animation: showScroll linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+@keyframes scrollLeft {
+    to {
+        left: -200px;
+    }
+}
+
+.stack2 ul li:nth-child(1){
+    animation-delay: calc(30s / 7 * (7 - 1) * -1);
+}
+
+.stack2 ul li:nth-child(2){
+    animation-delay: calc(30s / 7 * (7 - 2) * -1);
+}
+
+.stack2 ul li:nth-child(3){
+    animation-delay: calc(30s / 7 * (7 - 3) * -1);
+}
+
+.stack2 ul li:nth-child(4){
+    animation-delay: calc(30s / 7 * (7 - 4) * -1);
+}
+
+.stack2 ul li:nth-child(5){
+    animation-delay: calc(30s / 7 * (7 - 5) * -1);
+}
+
+.stack2 ul li:nth-child(6){
+    animation-delay: calc(30s / 7 * (7 - 6) * -1);
+}
+
+.stack2 ul li:nth-child(7){
+    animation-delay: calc(30s / 7 * (7 - 7) * -1);
+}
+
+.game {
+    text-align: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #1A1A1A;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: 100%;
+    height: 50vh;
+}
+
+h1 {
+    color: #333;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.5s ease;
+    position: absolute;
 }
